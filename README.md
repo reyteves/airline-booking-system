@@ -1,3 +1,4 @@
+![Airline Booking System Banner](Banner.png)
 
 # Technical Specifications Document
 
