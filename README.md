@@ -4,11 +4,16 @@
 
 ## 1. Title Page
 
-- **Project Name**: Airline Booking System 
-- **Version**: 1.0
-- **Date**: November 3, 2025
-- **Author(s)**: Group 2 Members
-
+- **Project Name**: Airline Booking System
+- **Version**: 1.1 (Updated)
+- **Date**: November 5, 2025
+- **Author(s)**:
+    * Rey Jesus M. Teves
+    * Jan Chelsea Lavaro
+    * Darwin Besorio
+    * Rex Bugcalao
+    * Cristino France Madali
+    * Manuel P Buenviaje II
 
 ## 2. Table of Contents
 
@@ -28,10 +33,11 @@
 - **Purpose**:
 To develop a basic airline booking system that enables users to search for flights, book tickets, and manage their bookings efficiently.
 - **Scope**:
-The MVP includes flight search, booking, ticket management, and payment processing. It excludes advanced features such as seat selection, loyalty programs, or multi-city bookings.
+**The Airline Booking System** includes flight search, booking, ticket management, and payment processing. It excludes advanced features such as seat selection, loyalty programs, or multi-city bookings.
 - **Definitions, Acronyms, and Abbreviations**:
     - **PNR**: Passenger Name Record
     - **API**: Application Programming Interface
+    - **MVP**: Minimum Viable Product
 
 ## 4. Overall Description
 
@@ -53,20 +59,22 @@ The system is a standalone web application aimed at customers and airline staff 
     - Reliable internet connectivity for users.
     - Availability of a payment gateway API (e.g., Stripe, PayPal).
 
-
 ## 5. Visual Mockup Reference
 
-- To be provided as design wireframes/screenshots linking to flight search, booking pages, and user profile.
-
+- **Link or Screenshot**: To be provided as design wireframes/screenshots linking to flight search, booking pages, and user profile. (Refer to the attached mobile mockups: Landing/Home, Search Results, Book a Flight/Confirmation, My Bookings, User Profile).
 
 ## 6. Features
 
-- **Flight Search**: Allows users to find available flights by origin, destination, and date.
-- **User Registration and Login**: Users create accounts and log in to manage bookings.
-- **Booking Creation**: Users can select flights, provide passenger details, and book tickets.
-- **Payment Processing**: Secure online payment integration to complete booking.
-- **Booking Management**: Users can view booking details and cancel bookings if needed.
+**The Airline Booking System** is structured around the following core features and corresponding UI pages:
 
+- **FEAT01: Landing/Home**: Provides the initial entry point and search interface.
+- **FEAT02: User Registration and Login**: Allows users to create accounts and log in to manage bookings.
+- **FEAT03: Flight Search & Results**: Allows users to find and view available flights by origin, destination, and date.
+- **FEAT04: Flight Selection/Details**: Allows users to choose a specific flight and view full details before booking.
+- **FEAT05: Booking Creation (Input Forms)**: Users can select flights, provide passenger details, and finalize the booking inputs.
+- **FEAT06: Payment & Booking Confirmation**: Secure online payment integration to complete the booking, leading to a confirmation.
+- **FEAT07: Booking Management (My Bookings)**: Users can view their upcoming, past, and cancelled bookings.
+- **FEAT08: User Profile/Account**: Allows users to manage personal information and security settings.
 
 ## 7. Functional Requirements
 
@@ -101,15 +109,13 @@ The system is a standalone web application aimed at customers and airline staff 
     - **Main Flow**: User selects "My Bookings" > chooses booking > views or cancels booking
     - **Alternate Flow**: Cancellation not allowed if deadline passed
 
-
 ### System Features
 
-- User Registration and Login
-- Flight Search Functionality
-- Booking Processing
-- Payment Gateway Integration
-- Booking Management Interface
-
+- **FEAT01/02:** User Registration and Login
+- **FEAT03/04:** Flight Search and Selection Functionality
+- **FEAT05/06:** Booking and Payment Processing
+- **FEAT07:** Booking Management Interface
+- **FEAT08:** User Profile Management Interface
 
 ## 8. Non-Functional Requirements
 
@@ -119,34 +125,34 @@ The system is a standalone web application aimed at customers and airline staff 
 - **Reliability**: 99.5% uptime with backup and recovery plans.
 - **Supportability**: Codebase well-documented, modular for easy maintenance.
 
-
 ## 9. Data Requirements
 
 - **Data Models**:
     - **User**: { user_id, email, password_hash, name }
     - **Flight**: { flight_id, airline, origin, destination, departure_time, arrival_time, available_seats }
     - **Booking**: { booking_id, user_id, flight_id, passenger_details, booking_status, payment_status }
+    - ***ERD Entities to be modeled***: User, Flight, Airport, Booking, Passenger, Payment, Ticket (as previously discussed).
 - **Database Requirements**: NoSQL, MongoDB Atlas
 - **Data Storage and Retrieval**: Efficient retrieval of flight schedules and user bookings for smooth UX.
-
+- **ERD**: Add the ERD for the database models based on Specifications. (To be attached)
 
 ## 10. External Interface Requirements
 
-- **User Interfaces**: Registration/login pages, flight search page, booking page, user account dashboard.
+- **User Interfaces**: Registration/login pages, flight search page, booking page, user account dashboard. (Specifically: Landing/Home, Search Results, Flight Selection, Book a Flight, My Bookings, User Profile).
 - **API Interfaces**: Payment gateway API for processing transactions. Flight data API if integrated with external flight data providers (optional).
 - **Hardware Interfaces**: None required.
 - **Software Interfaces**: Database system, payment gateway integration, optional third-party APIs.
-
 
 ## 11. Glossary
 
 - **PNR**: Passenger Name Record, unique booking identifier.
 - **API**: Application Programming Interface, allows systems to communicate.
-
+- **MVP**: Minimum Viable Product, a version of a product with just enough features to satisfy early customers.
 
 ## 12. Appendices
 
 - **Supporting Information**: User journey diagrams, wireframes (to be attached).
 - **Revision History**:
     - **v1.0**: Initial version created November 3, 2025.
+    - **v1.1**: Updated November 5, 2025. Incorporated all core UI pages (FEAT01-FEAT08) and enhanced Data Requirements based on MVP discussion.
 
