@@ -142,6 +142,8 @@ Design wireframes/screenshots should include the following pages:
 
 The following ERD illustrates the MongoDB database schema with collections and their relationships:
 
+![Entity-Relationship Diagram](ERD.png)
+
 ```mermaid
 erDiagram
     USERS ||--o{ BOOKINGS : "makes"
