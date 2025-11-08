@@ -135,6 +135,9 @@ Design wireframes/screenshots should include the following pages:
 - Booking Confirmation
 - My Bookings
 - User Profile/Account
+ 
+#### Mobile Landing Page
+![Mobile Landing Page](mobile-landing.png)
 
 **Live design available on Figma:** [Airline Booking System UI/UX](https://www.figma.com/make/2TIfAaviZLvRTfY95KbdWj/Airline-Booking-System-UI-UX?node-id=0-4&t=rJMVaOfTQaEewtvx-0)
 
