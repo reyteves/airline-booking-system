@@ -125,8 +125,9 @@ The system integrates with external services for payment processing and email no
 
 ## 5. Visual Mockup Reference
 
-### 5.1 Design Wireframes
-Design wireframes/screenshots should include the following pages:
+### 5.1 Design Screenshots
+The design screenshots includes the following pages:
+
 - Landing/Home
 - Login/Sign-up
 - Search Results
@@ -136,10 +137,7 @@ Design wireframes/screenshots should include the following pages:
 - My Bookings
 - User Profile/Account
  
-#### Mobile Landing Page
-![Mobile Landing Page](mobile-landing.png)
-
-**Live design available on Figma:** [Airline Booking System UI/UX](https://www.figma.com/make/2TIfAaviZLvRTfY95KbdWj/Airline-Booking-System-UI-UX?node-id=0-4&t=rJMVaOfTQaEewtvx-0)
+#### Click to see the [Design Screenshots](./pages.md)
 
 ### 5.2 Entity-Relationship Diagram (ERD)
 
