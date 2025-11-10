@@ -7,12 +7,12 @@
 **Version:** 1.2  
 **Date:** November 7, 2025  
 **Author(s):**
-- Rey Jesus M. Teves
-- Jan Chelsea Lavaro
-- Darwin Besorio
-- Rex Bugcalao
-- Cristino France Madali
-- Manuel P Buenviaje II
+- Rey Jesus M. Teves (Group Leader: Documentation, Trello, GitHub)
+- Jan Chelsea Lavaro (Figma)
+- Darwin Besorio (Figma)
+- Rex Bugcalao (Entity Relationship Diagram)
+- Cristino France Madali (Entity Relationship Diagram)
+- Manuel P Buenviaje II (Entity Relationship Diagram)
 
 ---
 
