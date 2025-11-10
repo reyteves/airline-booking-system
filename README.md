@@ -275,6 +275,8 @@ The Airline Booking System is structured around the following core features:
 
 ---
 
+- **Figma UI Kit**: Figma Design is available here: https://www.figma.com/design/HxhnSgMzAq0FQLGGGmckLR/Airify---Flight-Booking-App-UI-Kit---Travel-App----Preview-?node-id=4027-51417&p=f&t=ln5cW6WjYXD9etvC-0
+
 ## 7. Functional Requirements
 
 ### 7.1 Use Cases (Core User Journeys)
