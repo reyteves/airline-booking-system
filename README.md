@@ -76,6 +76,8 @@ The system is a standalone web application aimed at customers and airline staff 
 - **FEAT07: Booking Management (My Bookings)**: Users can view their upcoming, past, and cancelled bookings.
 - **FEAT08: User Profile/Account**: Allows users to manage personal information and security settings.
 
+- **Figma UI Kit**: Figma Design is available here: https://www.figma.com/design/HxhnSgMzAq0FQLGGGmckLR/Airify---Flight-Booking-App-UI-Kit---Travel-App----Preview-?node-id=4027-51417&p=f&t=ln5cW6WjYXD9etvC-0
+
 ## 7. Functional Requirements
 
 ### Use Cases
