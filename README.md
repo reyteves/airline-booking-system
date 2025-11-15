@@ -139,6 +139,10 @@ The design screenshots includes the following pages:
  
 #### Click to see the [Design Screenshots](./pages.md)
 
+Figma Design can be seen here:
+#### Click to see the [Figma Design](https://www.figma.com/design/HxhnSgMzAq0FQLGGGmckLR/Airify---Flight-Booking-App-UI-Kit---Travel-App----Preview-?node-id=4027-51417&p=f&t=ln5cW6WjYXD9etvC-0)
+
+
 ### 5.2 Entity-Relationship Diagram (ERD)
 
 The following ERD illustrates the MongoDB database schema with collections and their relationships:
