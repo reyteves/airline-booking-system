@@ -6,13 +6,21 @@
 **Project Name:** Airline Booking System  
 **Version:** 1.2  
 **Date:** November 7, 2025  
-**Author(s):**
-- Rey Jesus M. Teves (Group Leader: Documentation, Trello, GitHub)
-- Jan Chelsea Lavaro (Figma)
-- Darwin Besorio (Figma)
-- Rex Bugcalao (Entity Relationship Diagram)
-- Cristino France Madali (Entity Relationship Diagram)
-- Manuel P Buenviaje II (Entity Relationship Diagram)
+
+**Authors**
+
+**Group Leader**  
+*(Documentation, Trello, Github)*
+- Rey Jesus Teves
+
+**Figma**
+- Jan Chelsea Lavaro
+- Darwin Besorio
+
+**Entity Relationship Diagram**
+- Cristino France Madali
+- Rex Bugcalao
+- Manuel Buenviaje II
 
 ---
 
