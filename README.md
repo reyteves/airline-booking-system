@@ -22,6 +22,10 @@
 - Rex Bugcalao
 - Manuel Buenviaje II
 
+**Trello**
+
+* [Link](https://trello.com/b/KVgEZGj6/mcp-side-project-phase-i-flight-booking-system)
+
 ---
 
 ## 2. Table of Contents
