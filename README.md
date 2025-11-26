@@ -22,9 +22,10 @@
 - Rex Bugcalao
 - Manuel Buenviaje II
 
-**Trello**
+**Quicklinks**
 
-* [Link](https://trello.com/b/KVgEZGj6/mcp-side-project-phase-i-flight-booking-system)
+* [Prototype](https://reyteves.github.io/airline-booking-system-prototype)
+* [Trello](https://trello.com/b/KVgEZGj6/mcp-side-project-phase-i-flight-booking-system)
 
 ---
 
