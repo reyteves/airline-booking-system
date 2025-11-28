@@ -24,7 +24,7 @@
 
 **Quicklinks**
 
-* [Prototype](https://reyteves.github.io/airline-booking-system-prototype)
+* [Prototype](https://reyteves.github.io/airline-booking-system/)
 * [Trello](https://trello.com/b/KVgEZGj6/mcp-side-project-phase-i-flight-booking-system)
 
 ---
