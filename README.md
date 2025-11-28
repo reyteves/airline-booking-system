@@ -1,4 +1,4 @@
-![Airline Booking System Banner](./Banner.png)
+![Airline Booking System Banner](./images/Banner.png)
 
 # Technical Specifications Document
 
