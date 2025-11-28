@@ -1,0 +1,1934 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Air-Flight PH | Christmas Special</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --christmas-red: #c41e3a;
+            --christmas-green: #228b22;
+            --christmas-gold: #ffd700;
+            --christmas-dark: #0a2e0a;
+            --snow-white: #fffafa;
+            --light: #f8fafc;
+            --dark: #1e293b;
+        }
+
+        body {
+            background: linear-gradient(135deg, var(--christmas-dark) 0%, var(--christmas-green) 100%);
+            color: var(--dark);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Snowflake Animation */
+        .snowflake {
+            position: fixed;
+            top: -10px;
+            color: white;
+            font-size: 1em;
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+            user-select: none;
+            pointer-events: none;
+            z-index: 9999;
+            animation: fall linear forwards;
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--christmas-red), #8b0000);
+            box-shadow: 0 4px 20px rgba(196, 30, 58, 0.3);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 3px solid var(--christmas-gold);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 24px;
+            font-weight: 700;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            text-decoration: none;
+        }
+
+        .logo i {
+            color: var(--christmas-gold);
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: white;
+            font-weight: 500;
+            transition: all 0.3s;
+            padding: 8px 16px;
+            border-radius: 20px;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .auth-buttons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: none;
+            font-size: 14px;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid white;
+            color: white;
+        }
+
+        .btn-outline:hover {
+            background: white;
+            color: var(--christmas-red);
+            transform: translateY(-2px);
+        }
+
+        .btn-primary {
+            background: var(--christmas-gold);
+            color: var(--dark);
+        }
+
+        .btn-primary:hover {
+            background: #e6b800;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
+        }
+
+        .btn-success {
+            background: var(--christmas-green);
+            color: white;
+        }
+
+        .btn-warning {
+            background: var(--christmas-gold);
+            color: var(--dark);
+        }
+
+        .btn-danger {
+            background: var(--christmas-red);
+            color: white;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+
+        /* Main Content Area */
+        .main-content {
+            flex: 1;
+            padding: 40px 0;
+            display: none;
+        }
+
+        .main-content.active {
+            display: block;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 80px 0;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.2);
+            z-index: -1;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            font-weight: 800;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+            background: linear-gradient(135deg, #ffd700, #ffed4e, #ffffff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .christmas-offer {
+            background: linear-gradient(135deg, var(--christmas-red), var(--christmas-green));
+            padding: 15px 30px;
+            border-radius: 50px;
+            display: inline-block;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(196, 30, 58, 0.4);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            opacity: 0.9;
+            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+            line-height: 1.6;
+        }
+
+        /* Search Form */
+        .search-form {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            margin-top: 30px;
+            border: 3px solid var(--christmas-gold);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .search-form::before {
+            content: '🎄';
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            font-size: 3rem;
+            opacity: 0.3;
+            transform: rotate(-30deg);
+        }
+
+        .search-form::after {
+            content: '🎅';
+            position: absolute;
+            bottom: -20px;
+            right: -20px;
+            font-size: 3rem;
+            opacity: 0.3;
+            transform: rotate(30deg);
+        }
+
+        .form-row {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            flex: 1;
+            position: relative;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 15px 20px;
+            border: 2px solid #e5e7eb;
+            border-radius: 12px;
+            font-size: 16px;
+            transition: all 0.3s;
+            background: white;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--christmas-green);
+            box-shadow: 0 0 0 4px rgba(34, 139, 34, 0.1);
+        }
+
+        .search-btn {
+            width: 100%;
+            padding: 18px;
+            background: linear-gradient(135deg, var(--christmas-red), var(--christmas-green));
+            color: white;
+            font-size: 18px;
+            font-weight: 600;
+            margin-top: 10px;
+            border-radius: 12px;
+            border: none;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .search-btn::before {
+            content: '🎁';
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .search-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(196, 30, 58, 0.4);
+        }
+
+        /* Flight Results */
+        .section-title {
+            text-align: center;
+            margin: 50px 0 30px;
+            color: white;
+            font-size: 2.5rem;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+            font-weight: 700;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '✨';
+            position: absolute;
+            right: -30px;
+            top: 0;
+            font-size: 2rem;
+            animation: sparkle 1.5s infinite;
+        }
+
+        @keyframes sparkle {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.2); }
+        }
+
+        .flight-results, .bookings-list, .flights-list {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            margin-bottom: 50px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            border: 3px solid var(--christmas-gold);
+        }
+
+        .flight-card, .booking-card {
+            display: flex;
+            border-bottom: 2px solid var(--christmas-gold);
+            padding: 25px;
+            transition: all 0.3s;
+            background: white;
+            position: relative;
+        }
+
+        .flight-card::before {
+            content: '🎄';
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            opacity: 0.1;
+            font-size: 2rem;
+        }
+
+        .flight-card:hover, .booking-card:hover {
+            background: #fef7ed;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.2);
+        }
+
+        .flight-info {
+            flex: 3;
+            display: flex;
+            align-items: center;
+        }
+
+        .flight-times {
+            flex: 1;
+            text-align: center;
+        }
+
+        .flight-route {
+            flex: 2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .flight-route:before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--christmas-green), transparent);
+            z-index: 1;
+        }
+
+        .flight-route i {
+            background: white;
+            padding: 10px;
+            border-radius: 50%;
+            z-index: 2;
+            color: var(--christmas-green);
+            box-shadow: 0 4px 15px rgba(34, 139, 34, 0.3);
+        }
+
+        .flight-price {
+            flex: 1;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .price {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--christmas-red);
+        }
+
+        .christmas-discount {
+            color: var(--christmas-green);
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .flight-actions, .booking-actions {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .btn-book {
+            background: linear-gradient(135deg, var(--christmas-red), var(--christmas-green));
+            color: white;
+            padding: 12px 25px;
+            border-radius: 25px;
+            border: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .btn-book:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(196, 30, 58, 0.4);
+        }
+
+        .status-badge {
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .status-confirmed {
+            background: #dcfce7;
+            color: #166534;
+        }
+
+        .status-pending {
+            background: #fef3c7;
+            color: #92400e;
+        }
+
+        .status-cancelled {
+            background: #fee2e2;
+            color: #991b1b;
+        }
+
+        .status-checked-in {
+            background: #dbeafe;
+            color: #1e40af;
+        }
+
+        /* Christmas Special Offers */
+        .christmas-offers {
+            background: linear-gradient(135deg, var(--christmas-red), var(--christmas-green));
+            padding: 40px;
+            border-radius: 20px;
+            margin: 40px 0;
+            text-align: center;
+            color: white;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .offer-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 15px;
+            margin: 15px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        /* Forms */
+        .auth-form {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            max-width: 500px;
+            margin: 0 auto;
+            border: 3px solid var(--christmas-gold);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .auth-form::before {
+            content: '❄';
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            font-size: 2rem;
+            opacity: 0.3;
+        }
+
+        .auth-form h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: var(--christmas-red);
+        }
+
+        /* Contact Form */
+        .contact-form {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            margin: 30px 0;
+            border: 3px solid var(--christmas-gold);
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            background: linear-gradient(135deg, var(--christmas-dark), var(--christmas-green));
+            border-radius: 20px;
+            width: 90%;
+            max-width: 800px;
+            max-height: 90vh;
+            overflow-y: auto;
+            padding: 40px;
+            position: relative;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+            border: 3px solid var(--christmas-gold);
+            color: white;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--christmas-gold);
+        }
+
+        .modal-title {
+            margin-bottom: 20px;
+            font-size: 28px;
+            color: var(--christmas-gold);
+            text-align: center;
+        }
+
+        .passenger-form {
+            margin-bottom: 30px;
+        }
+
+        .form-section {
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .section-heading {
+            font-size: 18px;
+            margin-bottom: 15px;
+            color: var(--christmas-gold);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .payment-methods {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .payment-method {
+            flex: 1;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .payment-method.active {
+            border-color: var(--christmas-gold);
+            background: rgba(255, 215, 0, 0.2);
+        }
+
+        .payment-method i {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: var(--christmas-gold);
+        }
+
+        /* Confirmation Screen */
+        .confirmation-screen {
+            text-align: center;
+            padding: 40px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            margin: 30px 0;
+            border: 3px solid var(--christmas-gold);
+        }
+
+        .confirmation-icon {
+            font-size: 80px;
+            color: var(--christmas-green);
+            margin-bottom: 20px;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, var(--christmas-red), #8b0000);
+            color: white;
+            padding: 50px 0 20px;
+            margin-top: auto;
+            border-top: 3px solid var(--christmas-gold);
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .footer-column {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .footer-column h3 {
+            margin-bottom: 20px;
+            font-size: 18px;
+            color: var(--christmas-gold);
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-column a {
+            color: #cbd5e1;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-column a:hover {
+            color: var(--christmas-gold);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            background: var(--christmas-gold);
+            transform: translateY(-2px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #94a3b8;
+            font-size: 14px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .nav-links {
+                gap: 10px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .form-row {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .flight-card, .booking-card {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+
+            .flight-info {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .flight-actions, .booking-actions {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .search-form {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Snowflakes will be generated by JavaScript -->
+    
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="#" class="logo" onclick="showSection('home')">
+                    <i class="fas fa-plane"></i>
+                    <span>Air-Flight PH</span>
+                </a>
+                <div class="nav-links">
+                    <a href="#" class="active" onclick="showSection('home')">Home</a>
+                    <a href="#" onclick="showSection('discover')">Discover Flights</a>
+                    <a href="#" onclick="showSection('bookings')">My Bookings</a>
+                    <a href="#" onclick="showSection('flights')">Flight Status</a>
+                    <a href="#" onclick="showSection('contact')">Contact</a>
+                </div>
+                <div class="auth-buttons">
+                    <button class="btn btn-outline" onclick="showSection('login')">Sign In</button>
+                    <button class="btn btn-primary" onclick="showSection('register')">Sign Up</button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Home Section -->
+    <section id="home" class="main-content active">
+        <div class="hero">
+            <div class="container">
+                <div class="christmas-offer">
+                    <h3>🎄 Christmas Special: Up to 40% OFF! 🎅</h3>
+                </div>
+                <h1>Book Your Christmas Getaway</h1>
+                <p>Spread holiday cheer with our special Christmas flights. Enjoy exclusive deals and create magical memories this season!</p>
+                
+                <!-- Search Form -->
+                <div class="search-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="from">From</label>
+                            <select class="form-control" id="from">
+                                <option value="">Select origin</option>
+                                <option value="MNL">Manila (MNL)</option>
+                                <option value="CEB">Cebu (CEB)</option>
+                                <option value="DVO">Davao (DVO)</option>
+                                <option value="ILO">Iloilo (ILO)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="to">To</label>
+                            <select class="form-control" id="to">
+                                <option value="">Select destination</option>
+                                <option value="SIN">Singapore (SIN)</option>
+                                <option value="BKK">Bangkok (BKK)</option>
+                                <option value="HKG">Hong Kong (HKG)</option>
+                                <option value="TPE">Taipei (TPE)</option>
+                                <option value="NRT">Tokyo (NRT)</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="departure">Departure</label>
+                            <input type="date" class="form-control" id="departure">
+                        </div>
+                        <div class="form-group">
+                            <label for="return">Return (Optional)</label>
+                            <input type="date" class="form-control" id="return">
+                        </div>
+                        <div class="form-group">
+                            <label for="passengers">Passengers</label>
+                            <select class="form-control" id="passengers">
+                                <option value="1">1 Passenger</option>
+                                <option value="2" selected>2 Passengers</option>
+                                <option value="3">3 Passengers</option>
+                                <option value="4">4 Passengers</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary search-btn" onclick="searchFlights()">
+                        <i class="fas fa-search"></i> Find Christmas Flights
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Christmas Special Offers -->
+        <section class="container">
+            <div class="christmas-offers">
+                <h2>🎁 Exclusive Christmas Deals</h2>
+                <div style="display: flex; flex-wrap: wrap; justify-content: center; margin-top: 20px;">
+                    <div class="offer-card">
+                        <h3>Family Package</h3>
+                        <p>4 tickets + 20% OFF</p>
+                        <small>Perfect for family reunions</small>
+                    </div>
+                    <div class="offer-card">
+                        <h3>Early Bird Special</h3>
+                        <p>Book now, save 30%</p>
+                        <small>Limited time offer</small>
+                    </div>
+                    <div class="offer-card">
+                        <h3>Christmas Eve Flight</h3>
+                        <p>Free upgrade + Meal</p>
+                        <small>Dec 24 departures only</small>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="container">
+            <h2 class="section-title">Popular Christmas Destinations</h2>
+            <div class="flight-results" id="featuredFlights">
+                <!-- Featured flights will be populated by JavaScript -->
+            </div>
+        </section>
+    </section>
+
+    <!-- Login Section -->
+    <section id="login" class="main-content">
+        <div class="container">
+            <div class="auth-form">
+                <h2><i class="fas fa-sign-in-alt"></i> Sign In</h2>
+                <div class="form-group">
+                    <label for="loginEmail">Email</label>
+                    <input type="email" class="form-control" id="loginEmail" placeholder="Enter your email">
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">Password</label>
+                    <input type="password" class="form-control" id="loginPassword" placeholder="Enter your password">
+                </div>
+                <button class="btn btn-primary search-btn" onclick="login()">
+                    Sign In
+                </button>
+                <p style="text-align: center; margin-top: 20px;">
+                    Don't have an account? <a href="#" onclick="showSection('register')" style="color: var(--christmas-red);">Sign up here</a>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Register Section -->
+    <section id="register" class="main-content">
+        <div class="container">
+            <div class="auth-form">
+                <h2><i class="fas fa-user-plus"></i> Create Account</h2>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="regFirstName">First Name</label>
+                        <input type="text" class="form-control" id="regFirstName" placeholder="Enter first name">
+                    </div>
+                    <div class="form-group">
+                        <label for="regLastName">Last Name</label>
+                        <input type="text" class="form-control" id="regLastName" placeholder="Enter last name">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="regEmail">Email</label>
+                    <input type="email" class="form-control" id="regEmail" placeholder="Enter your email">
+                </div>
+                <div class="form-group">
+                    <label for="regPassword">Password</label>
+                    <input type="password" class="form-control" id="regPassword" placeholder="Create a password">
+                </div>
+                <div class="form-group">
+                    <label for="regConfirmPassword">Confirm Password</label>
+                    <input type="password" class="form-control" id="regConfirmPassword" placeholder="Confirm your password">
+                </div>
+                <button class="btn btn-primary search-btn" onclick="register()">
+                    Create Account
+                </button>
+                <p style="text-align: center; margin-top: 20px;">
+                    Already have an account? <a href="#" onclick="showSection('login')" style="color: var(--christmas-red);">Sign in here</a>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Discover Flights Section -->
+    <section id="discover" class="main-content">
+        <div class="container">
+            <h2 class="section-title">Discover Christmas Flights</h2>
+            <div class="search-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="discoverFrom">From</label>
+                        <select class="form-control" id="discoverFrom">
+                            <option value="">Any origin</option>
+                            <option value="MNL">Manila (MNL)</option>
+                            <option value="CEB">Cebu (CEB)</option>
+                            <option value="DVO">Davao (DVO)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="discoverTo">To</label>
+                        <select class="form-control" id="discoverTo">
+                            <option value="">Any destination</option>
+                            <option value="SIN">Singapore (SIN)</option>
+                            <option value="BKK">Bangkok (BKK)</option>
+                            <option value="HKG">Hong Kong (HKG)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="discoverDate">Departure Date</label>
+                        <input type="date" class="form-control" id="discoverDate">
+                    </div>
+                </div>
+                <button class="btn btn-primary search-btn" onclick="discoverFlights()">
+                    <i class="fas fa-search"></i> Search Christmas Flights
+                </button>
+            </div>
+            <div class="flight-results" id="discoverResults">
+                <!-- Discover results will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- My Bookings Section -->
+    <section id="bookings" class="main-content">
+        <div class="container">
+            <h2 class="section-title">My Christmas Bookings</h2>
+            <div class="bookings-list" id="bookingsList">
+                <!-- Bookings will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Flight Status Section -->
+    <section id="flights" class="main-content">
+        <div class="container">
+            <h2 class="section-title">Flight Status</h2>
+            <div class="search-form">
+                <div class="form-group">
+                    <label for="flightNumber">Flight Number</label>
+                    <input type="text" class="form-control" id="flightNumber" placeholder="Enter flight number (e.g., PR 501)">
+                </div>
+                <button class="btn btn-primary search-btn" onclick="checkFlightStatus()">
+                    Check Status
+                </button>
+            </div>
+            <div class="flight-results" id="flightStatusResults">
+                <!-- Flight status will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="main-content">
+        <div class="container">
+            <h2 class="section-title">Contact Santa's Helpers 🎅</h2>
+            <div class="contact-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="contactName">Full Name</label>
+                        <input type="text" class="form-control" id="contactName" placeholder="Enter your full name">
+                    </div>
+                    <div class="form-group">
+                        <label for="contactEmail">Email</label>
+                        <input type="email" class="form-control" id="contactEmail" placeholder="Enter your email">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="contactSubject">Subject</label>
+                    <input type="text" class="form-control" id="contactSubject" placeholder="Enter subject">
+                </div>
+                <div class="form-group">
+                    <label for="contactMessage">Message</label>
+                    <textarea class="form-control" id="contactMessage" rows="5" placeholder="Enter your message"></textarea>
+                </div>
+                <button class="btn btn-primary search-btn" onclick="sendMessage()">
+                    Send Message to Santa's Workshop
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Modal -->
+    <div class="modal" id="bookingModal">
+        <div class="modal-content">
+            <span class="close-modal" id="closeModal">&times;</span>
+            <h2 class="modal-title">🎅 Book Your Christmas Flight</h2>
+            
+            <div class="flight-summary">
+                <h3 class="section-heading">
+                    <i class="fas fa-plane"></i> Flight Details
+                </h3>
+                <div id="selectedFlightDetails">
+                    <!-- Selected flight details will be populated by JavaScript -->
+                </div>
+            </div>
+            
+            <div class="passenger-form">
+                <h3 class="section-heading">
+                    <i class="fas fa-user"></i> Passenger Information
+                </h3>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="firstName">First Name</label>
+                        <input type="text" class="form-control" id="firstName" placeholder="Enter first name">
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Last Name</label>
+                        <input type="text" class="form-control" id="lastName" placeholder="Enter last name">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" id="email" placeholder="Enter email">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone</label>
+                        <input type="tel" class="form-control" id="phone" placeholder="Enter phone number">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="passport">Passport Number</label>
+                        <input type="text" class="form-control" id="passport" placeholder="Enter passport number">
+                    </div>
+                    <div class="form-group">
+                        <label for="nationality">Nationality</label>
+                        <input type="text" class="form-control" id="nationality" placeholder="Enter nationality">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="payment-section">
+                <h3 class="section-heading">
+                    <i class="fas fa-credit-card"></i> Payment Method
+                </h3>
+                <div class="payment-methods">
+                    <div class="payment-method active" data-method="card">
+                        <i class="far fa-credit-card"></i>
+                        <p>Credit/Debit Card</p>
+                    </div>
+                    <div class="payment-method" data-method="paypal">
+                        <i class="fab fa-paypal"></i>
+                        <p>PayPal</p>
+                    </div>
+                    <div class="payment-method" data-method="gcash">
+                        <i class="fas fa-mobile-alt"></i>
+                        <p>GCash</p>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="cardNumber">Card Number</label>
+                        <input type="text" class="form-control" id="cardNumber" placeholder="1234 5678 9012 3456">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="expiry">Expiry Date</label>
+                        <input type="text" class="form-control" id="expiry" placeholder="MM/YY">
+                    </div>
+                    <div class="form-group">
+                        <label for="cvv">CVV</label>
+                        <input type="text" class="form-control" id="cvv" placeholder="123">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="booking-summary">
+                <h3 class="section-heading">
+                    <i class="fas fa-receipt"></i> Booking Summary
+                </h3>
+                <div id="bookingSummary">
+                    <!-- Booking summary will be populated by JavaScript -->
+                </div>
+            </div>
+
+            <!-- Christmas Special Message -->
+            <div class="christmas-message" style="background: rgba(255, 215, 0, 0.1); padding: 20px; border-radius: 10px; margin: 20px 0; text-align: center; border: 1px solid var(--christmas-gold);">
+                <h4>🎄 Christmas Bonus! 🎁</h4>
+                <p>You'll receive a <strong>free Christmas travel kit</strong> and <strong>priority boarding</strong> with this booking!</p>
+            </div>
+            
+            <button class="btn btn-primary search-btn" id="confirmBooking">
+                <i class="fas fa-lock"></i> Proceed to Payment
+            </button>
+        </div>
+    </div>
+
+    <!-- Payment Modal -->
+    <div class="modal" id="paymentModal">
+        <div class="modal-content">
+            <span class="close-modal" id="closePaymentModal">&times;</span>
+            <h2 class="modal-title">Payment</h2>
+            
+            <div class="payment-details">
+                <h3 class="section-heading">
+                    <i class="fas fa-credit-card"></i> Payment Details
+                </h3>
+                <div id="paymentSummary">
+                    <!-- Payment summary will be populated by JavaScript -->
+                </div>
+            </div>
+            
+            <button class="btn btn-success search-btn" onclick="processPayment()">
+                <i class="fas fa-check"></i> Confirm Payment
+            </button>
+        </div>
+    </div>
+
+    <!-- Confirmation Screen -->
+    <div class="modal" id="confirmationModal">
+        <div class="modal-content">
+            <div class="confirmation-screen">
+                <div class="confirmation-icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <h2>🎉 Booking Confirmed! 🎄</h2>
+                <p>Your Christmas flight has been successfully booked!</p>
+                <div id="confirmationDetails">
+                    <!-- Confirmation details will be populated by JavaScript -->
+                </div>
+                <div class="flight-actions" style="margin-top: 30px;">
+                    <button class="btn btn-primary" onclick="closeConfirmation()">Done</button>
+                    <button class="btn btn-outline" onclick="printConfirmation()">Print Ticket</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Air-Flight PH</h3>
+                    <p>Making your Christmas travel magical and memorable. Fly with us this holiday season! 🎅</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#" onclick="showSection('home')">Home</a></li>
+                        <li><a href="#" onclick="showSection('discover')">Christmas Flights</a></li>
+                        <li><a href="#" onclick="showSection('bookings')">My Bookings</a></li>
+                        <li><a href="#" onclick="showSection('flights')">Flight Status</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="#" onclick="showSection('contact')">Help Center</a></li>
+                        <li><a href="#" onclick="showSection('contact')">Contact Santa 🎅</a></li>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Cancellation Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Info</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Manila, Philippines</li>
+                        <li><i class="fas fa-phone"></i> +63 912 345 6789</li>
+                        <li><i class="fas fa-envelope"></i> merry@airflightph.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Air-Flight PH. Wishing you a Merry Christmas and Happy Holidays! 🎄</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Create falling snowflakes
+        function createSnowflake() {
+            const snowflake = document.createElement('div');
+            snowflake.classList.add('snowflake');
+            snowflake.innerHTML = '❄';
+            snowflake.style.left = Math.random() * 100 + 'vw';
+            snowflake.style.animationDuration = Math.random() * 3 + 2 + 's';
+            snowflake.style.fontSize = Math.random() * 10 + 10 + 'px';
+            snowflake.style.opacity = Math.random() * 0.6 + 0.4;
+            document.body.appendChild(snowflake);
+
+            setTimeout(() => {
+                snowflake.remove();
+            }, 5000);
+        }
+
+        // Create snowflakes every 100ms
+        setInterval(createSnowflake, 100);
+
+        // Christmas-themed flight data with special offers
+        const flights = [
+            {
+                id: 1,
+                airline: "Philippine Airlines",
+                flightNo: "PR 501",
+                from: "MNL", to: "SIN",
+                departure: "08:00", arrival: "11:30",
+                duration: "3h 30m", price: 12500,
+                originalPrice: 15625, seats: 24,
+                status: "On Time",
+                christmasBonus: "Free Christmas meal + Priority boarding"
+            },
+            {
+                id: 2,
+                airline: "Cebu Pacific",
+                flightNo: "5J 801",
+                from: "MNL", to: "BKK",
+                departure: "10:15", arrival: "13:45",
+                duration: "3h 30m", price: 8900,
+                originalPrice: 12714, seats: 18,
+                status: "On Time",
+                christmasBonus: "20% Christmas discount + Travel kit"
+            },
+            {
+                id: 3,
+                airline: "AirAsia",
+                flightNo: "Z2 205",
+                from: "MNL", to: "HKG",
+                departure: "14:20", arrival: "16:50",
+                duration: "2h 30m", price: 7500,
+                originalPrice: 10714, seats: 12,
+                status: "Delayed",
+                christmasBonus: "Free seat selection + Snack pack"
+            },
+            {
+                id: 4,
+                airline: "Philippine Airlines",
+                flightNo: "PR 892",
+                from: "MNL", to: "TPE",
+                departure: "18:45", arrival: "21:15",
+                duration: "2h 30m", price: 11000,
+                originalPrice: 13750, seats: 8,
+                status: "On Time",
+                christmasBonus: "Christmas gift pack + Lounge access"
+            },
+            {
+                id: 5,
+                airline: "Christmas Special",
+                flightNo: "XMAS 25",
+                from: "MNL", to: "NRT",
+                departure: "20:00", arrival: "01:30",
+                duration: "4h 30m", price: 15000,
+                originalPrice: 25000, seats: 6,
+                status: "On Time",
+                christmasBonus: "40% OFF + All Christmas bonuses"
+            }
+        ];
+
+        let userBookings = [];
+        let currentUser = null;
+        let currentBooking = null;
+
+        // Initialize featured flights
+        displayFeaturedFlights();
+
+        // Navigation functions
+        function showSection(sectionId) {
+            // Hide all sections
+            document.querySelectorAll('.main-content').forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            // Show selected section
+            document.getElementById(sectionId).classList.add('active');
+            
+            // Update navigation
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.classList.remove('active');
+            });
+            
+            // Close any open modals
+            closeAllModals();
+        }
+
+        function closeAllModals() {
+            document.getElementById('bookingModal').style.display = 'none';
+            document.getElementById('paymentModal').style.display = 'none';
+            document.getElementById('confirmationModal').style.display = 'none';
+        }
+
+        // Display featured flights on home page
+        function displayFeaturedFlights() {
+            const featuredFlights = document.getElementById('featuredFlights');
+            featuredFlights.innerHTML = '';
+            
+            flights.slice(0, 3).forEach(flight => {
+                const discount = Math.round(((flight.originalPrice - flight.price) / flight.originalPrice) * 100);
+                const flightCard = document.createElement('div');
+                flightCard.className = 'flight-card';
+                flightCard.innerHTML = `
+                    <div class="flight-info">
+                        <div class="flight-times">
+                            <div class="time">${flight.departure}</div>
+                            <div class="date">Today</div>
+                        </div>
+                        <div class="flight-route">
+                            <i class="fas fa-plane"></i>
+                        </div>
+                        <div class="flight-times">
+                            <div class="time">${flight.arrival}</div>
+                            <div class="date">Today</div>
+                        </div>
+                        <div class="flight-details">
+                            <div class="airline">${flight.airline}</div>
+                            <div class="flight-number">${flight.flightNo}</div>
+                            <div class="duration">${flight.duration}</div>
+                            <div class="christmas-bonus" style="font-size: 12px; color: var(--christmas-green); margin-top: 5px;">
+                                <i class="fas fa-gift"></i> ${flight.christmasBonus}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flight-price">
+                        <div class="price">₱${flight.price.toLocaleString()}</div>
+                        <div style="text-decoration: line-through; color: #999; font-size: 14px;">
+                            ₱${flight.originalPrice.toLocaleString()}
+                        </div>
+                        <div class="christmas-discount">${discount}% CHRISTMAS OFF!</div>
+                        <div class="seats">${flight.seats} seats left</div>
+                    </div>
+                    <div class="flight-actions">
+                        <button class="btn btn-book" onclick="openBookingModal(${flight.id})">Book Now 🎄</button>
+                    </div>
+                `;
+                featuredFlights.appendChild(flightCard);
+            });
+            featuredFlights.style.display = 'block';
+        }
+
+        // Search flights function
+        function searchFlights() {
+            const from = document.getElementById('from').value;
+            const to = document.getElementById('to').value;
+            const departure = document.getElementById('departure').value;
+            
+            if (!from || !to || !departure) {
+                alert('🎅 Please fill in all required fields to find your perfect Christmas flight!');
+                return;
+            }
+            
+            showSection('discover');
+            discoverFlights();
+        }
+
+        // Discover flights function
+        function discoverFlights() {
+            const from = document.getElementById('discoverFrom').value;
+            const to = document.getElementById('discoverTo').value;
+            const date = document.getElementById('discoverDate').value;
+            
+            const discoverResults = document.getElementById('discoverResults');
+            discoverResults.innerHTML = '';
+            
+            let filteredFlights = flights;
+            
+            if (from) {
+                filteredFlights = filteredFlights.filter(flight => flight.from === from);
+            }
+            
+            if (to) {
+                filteredFlights = filteredFlights.filter(flight => flight.to === to);
+            }
+            
+            if (filteredFlights.length === 0) {
+                discoverResults.innerHTML = `
+                    <div style="padding: 40px; text-align: center; color: #666;">
+                        <i class="fas fa-snowflake" style="font-size: 48px; margin-bottom: 20px; color: var(--christmas-red);"></i>
+                        <h3>No flights found</h3>
+                        <p>Try adjusting your search criteria for more Christmas flight options! 🎅</p>
+                    </div>
+                `;
+            } else {
+                filteredFlights.forEach(flight => {
+                    const discount = Math.round(((flight.originalPrice - flight.price) / flight.originalPrice) * 100);
+                    const flightCard = document.createElement('div');
+                    flightCard.className = 'flight-card';
+                    flightCard.innerHTML = `
+                        <div class="flight-info">
+                            <div class="flight-times">
+                                <div class="time">${flight.departure}</div>
+                                <div class="date">${date || 'Today'}</div>
+                            </div>
+                            <div class="flight-route">
+                                <i class="fas fa-plane"></i>
+                            </div>
+                            <div class="flight-times">
+                                <div class="time">${flight.arrival}</div>
+                                <div class="date">${date || 'Today'}</div>
+                            </div>
+                            <div class="flight-details">
+                                <div class="airline">${flight.airline}</div>
+                                <div class="flight-number">${flight.flightNo}</div>
+                                <div class="duration">${flight.duration}</div>
+                                <div class="christmas-bonus" style="font-size: 12px; color: var(--christmas-green); margin-top: 5px;">
+                                    <i class="fas fa-gift"></i> ${flight.christmasBonus}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flight-price">
+                            <div class="price">₱${flight.price.toLocaleString()}</div>
+                            <div style="text-decoration: line-through; color: #999; font-size: 14px;">
+                                ₱${flight.originalPrice.toLocaleString()}
+                            </div>
+                            <div class="christmas-discount">${discount}% CHRISTMAS OFF!</div>
+                            <div class="seats">${flight.seats} seats left</div>
+                        </div>
+                        <div class="flight-actions">
+                            <button class="btn btn-book" onclick="openBookingModal(${flight.id})">Book Now 🎄</button>
+                        </div>
+                    `;
+                    discoverResults.appendChild(flightCard);
+                });
+            }
+            discoverResults.style.display = 'block';
+        }
+
+        // Open booking modal
+        function openBookingModal(flightId) {
+            const flight = flights.find(f => f.id === flightId);
+            const passengers = document.getElementById('passengers').value;
+            const totalPrice = flight.price * parseInt(passengers);
+            const discount = Math.round(((flight.originalPrice - flight.price) / flight.originalPrice) * 100);
+            
+            document.getElementById('selectedFlightDetails').innerHTML = `
+                <div class="flight-card">
+                    <div class="flight-info">
+                        <div class="flight-times">
+                            <div class="time">${flight.departure}</div>
+                            <div class="date">${document.getElementById('departure').value || 'Today'}</div>
+                        </div>
+                        <div class="flight-route">
+                            <i class="fas fa-plane"></i>
+                        </div>
+                        <div class="flight-times">
+                            <div class="time">${flight.arrival}</div>
+                            <div class="date">${document.getElementById('departure').value || 'Today'}</div>
+                        </div>
+                        <div class="flight-details">
+                            <div class="airline">${flight.airline}</div>
+                            <div class="flight-number">${flight.flightNo}</div>
+                            <div class="duration">${flight.duration}</div>
+                            <div class="christmas-bonus" style="color: var(--christmas-green); margin-top: 5px;">
+                                <i class="fas fa-gift"></i> ${flight.christmasBonus}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            document.getElementById('bookingSummary').innerHTML = `
+                <div class="summary-row">
+                    <div>Flight (${discount}% Christmas OFF):</div>
+                    <div>₱${flight.price.toLocaleString()} x ${passengers}</div>
+                </div>
+                <div class="summary-row">
+                    <div>You Save:</div>
+                    <div style="color: var(--christmas-green);">₱${((flight.originalPrice - flight.price) * parseInt(passengers)).toLocaleString()}</div>
+                </div>
+                <div class="summary-row">
+                    <div>Taxes & Fees:</div>
+                    <div>₱${(totalPrice * 0.1).toLocaleString()}</div>
+                </div>
+                <div class="summary-row" style="font-weight: bold; font-size: 18px; margin-top: 10px; color: var(--christmas-gold);">
+                    <div>Total:</div>
+                    <div>₱${(totalPrice * 1.1).toLocaleString()}</div>
+                </div>
+            `;
+            
+            currentBooking = { flight, passengers, totalPrice: totalPrice * 1.1 };
+            document.getElementById('bookingModal').style.display = 'flex';
+        }
+
+        // Close modal event listeners
+        document.getElementById('closeModal').addEventListener('click', () => {
+            document.getElementById('bookingModal').style.display = 'none';
+        });
+
+        document.getElementById('closePaymentModal').addEventListener('click', () => {
+            document.getElementById('paymentModal').style.display = 'none';
+        });
+
+        // Payment method selection
+        document.querySelectorAll('.payment-method').forEach(method => {
+            method.addEventListener('click', () => {
+                document.querySelectorAll('.payment-method').forEach(m => m.classList.remove('active'));
+                method.classList.add('active');
+            });
+        });
+
+        // Proceed to payment
+        document.getElementById('confirmBooking').addEventListener('click', () => {
+            const firstName = document.getElementById('firstName').value;
+            const lastName = document.getElementById('lastName').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            
+            if (!firstName || !lastName || !email || !phone) {
+                alert('🎅 Please fill in all passenger details to continue with your Christmas booking!');
+                return;
+            }
+            
+            document.getElementById('bookingModal').style.display = 'none';
+            document.getElementById('paymentModal').style.display = 'flex';
+            
+            document.getElementById('paymentSummary').innerHTML = `
+                <div class="summary-row">
+                    <div>Flight:</div>
+                    <div>${currentBooking.flight.airline} ${currentBooking.flight.flightNo}</div>
+                </div>
+                <div class="summary-row">
+                    <div>Passenger:</div>
+                    <div>${firstName} ${lastName}</div>
+                </div>
+                <div class="summary-row">
+                    <div>Amount to Pay:</div>
+                    <div style="font-weight: bold; color: var(--christmas-gold);">₱${currentBooking.totalPrice.toLocaleString()}</div>
+                </div>
+            `;
+        });
+
+        // Process payment
+        function processPayment() {
+            // Create Christmas celebration effects
+            createConfetti();
+            
+            setTimeout(() => {
+                // Add booking to user's bookings
+                const bookingId = 'B' + Math.random().toString(36).substr(2, 9).toUpperCase();
+                const newBooking = {
+                    id: bookingId,
+                    ...currentBooking,
+                    passenger: {
+                        firstName: document.getElementById('firstName').value,
+                        lastName: document.getElementById('lastName').value,
+                        email: document.getElementById('email').value,
+                        phone: document.getElementById('phone').value
+                    },
+                    status: 'confirmed',
+                    bookingDate: new Date().toLocaleDateString()
+                };
+                
+                userBookings.push(newBooking);
+                
+                // Show confirmation
+                document.getElementById('paymentModal').style.display = 'none';
+                document.getElementById('confirmationModal').style.display = 'flex';
+                
+                document.getElementById('confirmationDetails').innerHTML = `
+                    <div style="background: rgba(255, 255, 255, 0.1); padding: 20px; border-radius: 10px; margin: 20px 0;">
+                        <h3>Booking Details</h3>
+                        <p><strong>Booking ID:</strong> ${bookingId}</p>
+                        <p><strong>Flight:</strong> ${newBooking.flight.airline} ${newBooking.flight.flightNo}</p>
+                        <p><strong>Route:</strong> ${newBooking.flight.from} → ${newBooking.flight.to}</p>
+                        <p><strong>Passenger:</strong> ${newBooking.passenger.firstName} ${newBooking.passenger.lastName}</p>
+                        <p><strong>Total Paid:</strong> ₱${newBooking.totalPrice.toLocaleString()}</p>
+                        <p style="color: var(--christmas-gold); margin-top: 10px;">
+                            <i class="fas fa-gift"></i> Christmas Bonus: ${newBooking.flight.christmasBonus}
+                        </p>
+                    </div>
+                `;
+                
+                // Reset form
+                document.getElementById('firstName').value = '';
+                document.getElementById('lastName').value = '';
+                document.getElementById('email').value = '';
+                document.getElementById('phone').value = '';
+                document.getElementById('passport').value = '';
+                document.getElementById('nationality').value = '';
+                
+            }, 1000);
+        }
+
+        // Create confetti effect for celebrations
+        function createConfetti() {
+            for (let i = 0; i < 50; i++) {
+                setTimeout(() => {
+                    const confetti = document.createElement('div');
+                    confetti.style.position = 'fixed';
+                    confetti.style.left = Math.random() * 100 + 'vw';
+                    confetti.style.top = '-10px';
+                    confetti.style.fontSize = '20px';
+                    confetti.style.zIndex = '10000';
+                    confetti.style.pointerEvents = 'none';
+                    confetti.innerHTML = ['🎄', '🎁', '⭐', '🎅', '🤶', '✨'][Math.floor(Math.random() * 6)];
+                    confetti.style.animation = `confettiFall ${Math.random() * 2 + 1}s linear forwards`;
+                    
+                    document.body.appendChild(confetti);
+                    
+                    setTimeout(() => confetti.remove(), 3000);
+                }, i * 100);
+            }
+            
+            // Add confetti animation
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes confettiFall {
+                    to {
+                        transform: translateY(100vh) rotate(360deg);
+                        opacity: 0;
+                    }
+                }
+            `;
+            document.head.appendChild(style);
+        }
+
+        // Close confirmation
+        function closeConfirmation() {
+            document.getElementById('confirmationModal').style.display = 'none';
+            showSection('bookings');
+            displayBookings();
+        }
+
+        // Print confirmation
+        function printConfirmation() {
+            window.print();
+        }
+
+        // Display user bookings
+        function displayBookings() {
+            const bookingsList = document.getElementById('bookingsList');
+            bookingsList.innerHTML = '';
+            
+            if (userBookings.length === 0) {
+                bookingsList.innerHTML = `
+                    <div style="padding: 40px; text-align: center; color: #666;">
+                        <i class="fas fa-sleigh" style="font-size: 48px; margin-bottom: 20px; color: var(--christmas-red);"></i>
+                        <h3>No Christmas bookings yet</h3>
+                        <p>Book your first Christmas flight and start your holiday adventure! 🎅</p>
+                        <button class="btn btn-primary" onclick="showSection('discover')" style="margin-top: 20px;">
+                            Discover Christmas Flights
+                        </button>
+                    </div>
+                `;
+            } else {
+                userBookings.forEach(booking => {
+                    const bookingCard = document.createElement('div');
+                    bookingCard.className = 'booking-card';
+                    bookingCard.innerHTML = `
+                        <div class="flight-info">
+                            <div class="flight-times">
+                                <div class="time">${booking.flight.departure}</div>
+                                <div class="date">${booking.bookingDate}</div>
+                            </div>
+                            <div class="flight-route">
+                                <i class="fas fa-plane"></i>
+                            </div>
+                            <div class="flight-times">
+                                <div class="time">${booking.flight.arrival}</div>
+                                <div class="date">${booking.bookingDate}</div>
+                            </div>
+                            <div class="flight-details">
+                                <div class="airline">${booking.flight.airline}</div>
+                                <div class="flight-number">${booking.flight.flightNo}</div>
+                                <div class="duration">${booking.flight.duration}</div>
+                                <div>${booking.passenger.firstName} ${booking.passenger.lastName}</div>
+                            </div>
+                        </div>
+                        <div class="flight-price">
+                            <div class="price">₱${booking.totalPrice.toLocaleString()}</div>
+                            <div class="status-badge status-confirmed">Confirmed</div>
+                            <div style="font-size: 12px; color: #666;">${booking.id}</div>
+                        </div>
+                        <div class="booking-actions">
+                            <button class="btn btn-success" onclick="checkIn('${booking.id}')">Check-in</button>
+                            <button class="btn btn-outline" onclick="viewTicket('${booking.id}')">View Ticket</button>
+                        </div>
+                    `;
+                    bookingsList.appendChild(bookingCard);
+                });
+            }
+            bookingsList.style.display = 'block';
+        }
+
+        // Check-in function
+        function checkIn(bookingId) {
+            alert(`🎄 Check-in successful for booking ${bookingId}!\n\nYour Christmas flight is ready for boarding! 🎅`);
+        }
+
+        // View ticket function
+        function viewTicket(bookingId) {
+            const booking = userBookings.find(b => b.id === bookingId);
+            alert(`🎫 E-Ticket for ${booking.passenger.firstName} ${booking.passenger.lastName}\n\nFlight: ${booking.flight.airline} ${booking.flight.flightNo}\nFrom: ${booking.flight.from} To: ${booking.flight.to}\nDate: ${booking.bookingDate}\nTime: ${booking.flight.departure}\n\nHave a magical Christmas flight! 🎄`);
+        }
+
+        // Check flight status
+        function checkFlightStatus() {
+            const flightNumber = document.getElementById('flightNumber').value;
+            const flightStatusResults = document.getElementById('flightStatusResults');
+            
+            if (!flightNumber) {
+                alert('Please enter a flight number');
+                return;
+            }
+            
+            const flight = flights.find(f => f.flightNo === flightNumber.toUpperCase());
+            
+            if (flight) {
+                flightStatusResults.innerHTML = `
+                    <div class="flight-card">
+                        <div class="flight-info">
+                            <div class="flight-times">
+                                <div class="time">${flight.departure}</div>
+                                <div class="date">Today</div>
+                            </div>
+                            <div class="flight-route">
+                                <i class="fas fa-plane"></i>
+                            </div>
+                            <div class="flight-times">
+                                <div class="time">${flight.arrival}</div>
+                                <div class="date">Today</div>
+                            </div>
+                            <div class="flight-details">
+                                <div class="airline">${flight.airline}</div>
+                                <div class="flight-number">${flight.flightNo}</div>
+                                <div class="duration">${flight.duration}</div>
+                                <div class="status-badge ${flight.status === 'On Time' ? 'status-confirmed' : 'status-pending'}">
+                                    ${flight.status}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flight-price">
+                            <div>${flight.from} → ${flight.to}</div>
+                            <div style="font-size: 14px; color: #666;">Christmas Flight</div>
+                        </div>
+                        <div class="flight-actions">
+                            <button class="btn btn-primary" onclick="openBookingModal(${flight.id})">Book Similar</button>
+                        </div>
+                    </div>
+                `;
+            } else {
+                flightStatusResults.innerHTML = `
+                    <div style="padding: 40px; text-align: center; color: #666;">
+                        <i class="fas fa-search" style="font-size: 48px; margin-bottom: 20px; color: var(--christmas-red);"></i>
+                        <h3>Flight not found</h3>
+                        <p>No flight found with number: ${flightNumber}</p>
+                        <p>Check the number and try again! 🎅</p>
+                    </div>
+                `;
+            }
+            flightStatusResults.style.display = 'block';
+        }
+
+        // Auth functions (simplified for demo)
+        function login() {
+            const email = document.getElementById('loginEmail').value;
+            const password = document.getElementById('loginPassword').value;
+            
+            if (email && password) {
+                currentUser = { email, name: email.split('@')[0] };
+                alert(`🎅 Welcome back, ${currentUser.name}! Ready for your Christmas adventure?`);
+                showSection('home');
+                updateAuthButtons();
+            } else {
+                alert('Please enter both email and password');
+            }
+        }
+
+        function register() {
+            const firstName = document.getElementById('regFirstName').value;
+            const lastName = document.getElementById('regLastName').value;
+            const email = document.getElementById('regEmail').value;
+            const password = document.getElementById('regPassword').value;
+            const confirmPassword = document.getElementById('regConfirmPassword').value;
+            
+            if (!firstName || !lastName || !email || !password || !confirmPassword) {
+                alert('Please fill in all fields');
+                return;
+            }
+            
+            if (password !== confirmPassword) {
+                alert('Passwords do not match');
+                return;
+            }
+            
+            currentUser = { email, name: firstName };
+            alert(`🎄 Welcome to Air-Flight PH, ${firstName}! Your account has been created.`);
+            showSection('home');
+            updateAuthButtons();
+        }
+
+        function updateAuthButtons() {
+            if (currentUser) {
+                document.querySelector('.auth-buttons').innerHTML = `
+                    <span style="color: var(--christmas-red); font-weight: 600;">Welcome, ${currentUser.name}!</span>
+                    <button class="btn btn-outline" onclick="logout()">Logout</button>
+                `;
+            }
+        }
+
+        function logout() {
+            currentUser = null;
+            alert('🎅 You have been logged out. See you soon for more Christmas adventures!');
+            showSection('home');
+            document.querySelector('.auth-buttons').innerHTML = `
+                <button class="btn btn-outline" onclick="showSection('login')">Sign In</button>
+                <button class="btn btn-primary" onclick="showSection('register')">Sign Up</button>
+            `;
+        }
+
+        // Contact form
+        function sendMessage() {
+            const name = document.getElementById('contactName').value;
+            const email = document.getElementById('contactEmail').value;
+            const subject = document.getElementById('contactSubject').value;
+            const message = document.getElementById('contactMessage').value;
+            
+            if (!name || !email || !subject || !message) {
+                alert('Please fill in all fields');
+                return;
+            }
+            
+            alert(`🎅 Thank you for your message, ${name}! Santa's helpers will get back to you soon.`);
+            document.getElementById('contactName').value = '';
+            document.getElementById('contactEmail').value = '';
+            document.getElementById('contactSubject').value = '';
+            document.getElementById('contactMessage').value = '';
+        }
+
+        // Set minimum date for departure to today
+        const today = new Date().toISOString().split('T')[0];
+        document.getElementById('departure').setAttribute('min', today);
+        document.getElementById('return').setAttribute('min', today);
+        document.getElementById('discoverDate').setAttribute('min', today);
+
+        // Auto-fill Christmas dates for demo
+        const christmasEve = '2024-12-24';
+        document.getElementById('departure').value = christmasEve;
+        document.getElementById('discoverDate').value = christmasEve;
+    </script>
+</body>
+</html>

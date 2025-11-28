@@ -27,6 +27,9 @@
 * [Prototype](https://reyteves.github.io/airline-booking-system/)
 * [Trello](https://trello.com/b/KVgEZGj6/mcp-side-project-phase-i-flight-booking-system)
 
+**Alternate Design**
+* [Christmas Theme](https://reyteves.github.io/airline-booking-system/christmas-theme.html)
+
 ---
 
 ## 2. Table of Contents
