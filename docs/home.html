@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Air-Flight Philippines</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+    
+    <style>
+        :root { --primary-color: #007BFF; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #F8F9FA; padding-top: 70px; }
+        
+        .navbar { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border-bottom: 1px solid #eee; }
+        .nav-link { font-weight: 500; color: #555; }
+        .nav-link:hover, .nav-link.active { color: var(--primary-color); }
+        .navbar-brand { font-weight: 700; display: flex; align-items: center; gap: 5px; }
+
+        .hero {
+            position: relative;
+            height: calc(100vh - 70px);
+            min-height: 600px;
+            background: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBBQugdgQnZsFUQgKibJ9ZA0kzI1A3ZKFwxyZm1gKBoTNIxkZb5aVyVzl4BKIWF6O42CdIRVX4xh2orkkzWKBvklhYK8FX9189YJ8NztaS8rINOeK-007768Iqzjd-atFUCLv1kuv-CQRBpqKR_lYQAN3vPJ-RxLvmqSnCXw5XHbKJS8ZOVqAHHEBJNwRCR73mjxPXjj8kw_UxXSntdbaPq77-AFXgW3TNErwPWXnKLLAt5oFdofH9YaZwoh3gRfiSvUw4mtIbRRhzm') no-repeat center center/cover;
+        }
+        .hero-overlay {
+            position: absolute; inset: 0;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.1));
+        }
+        
+        .search-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 1rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+        
+        .flight-input {
+            height: 3.5rem;
+            border-radius: 0.5rem;
+            border: 1px solid #ced4da;
+            padding-left: 2.5rem;
+        }
+        .input-icon {
+            position: absolute; left: 15px; top: 50%; transform: translateY(-50%);
+            color: #999;
+        }
+        .search-btn {
+            height: 3.5rem;
+            font-weight: 700;
+            border-radius: 0.5rem;
+            width: 100%;
+            display: flex; align-items: center; justify-content: center; gap: 5px;
+        }
+        .trip-type-btn {
+            border-radius: 20px;
+            padding: 5px 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            border: none;
+            background: transparent;
+            color: #666;
+        }
+        .trip-type-btn.active {
+            background: var(--primary-color);
+            color: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="home.html">
+                <span class="material-symbols-outlined text-primary fs-2">flight_takeoff</span>
+                Air-Flight PH
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link active" href="home.html">Book</a></li>
+                    <li class="nav-item"><a class="nav-link" href="my-bookings.html">My Bookings</a></li>
+                    <li class="nav-item"><a class="nav-link" href="checkin.html">Check-in</a></li>
+                    <li class="nav-item"><a class="nav-link" href="flight-status.html">Flight Status</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item ms-lg-3">
+                        <a href="login.html" class="btn btn-light rounded-circle p-2 d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
+                            <span class="material-symbols-outlined text-secondary">account_circle</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero d-flex align-items-center justify-content-center">
+        <div class="hero-overlay"></div>
+        <div class="container position-relative z-2">
+            <div class="text-center text-white mb-5">
+                <h1 class="display-3 fw-bold mb-3">Your Philippine Adventure Starts Here.</h1>
+                <p class="fs-4">Find the perfect flight to discover the islands.</p>
+            </div>
+
+            <!-- Search Card -->
+            <div class="search-card p-4 p-md-5 mx-auto" style="max-width: 1000px;">
+                <!-- Trip Type -->
+                <div class="text-center mb-4">
+                    <div class="d-inline-flex bg-light rounded-pill p-1 border">
+                        <button class="trip-type-btn">One Way</button>
+                        <button class="trip-type-btn active">Round Trip</button>
+                        <button class="trip-type-btn">Multi-city</button>
+                    </div>
+                </div>
+
+                <!-- Form -->
+                <div class="row g-3 align-items-end">
+                    <!-- Origin -->
+                    <div class="col-lg-3 col-md-6 position-relative">
+                        <label class="form-label fw-bold small text-primary mb-1">From</label>
+                        <div class="position-relative">
+                            <span class="material-symbols-outlined input-icon">flight_takeoff</span>
+                            <input type="text" class="form-control flight-input fw-bold" value="Manila (MNL)">
+                        </div>
+                    </div>
+                    <!-- Destination -->
+                    <div class="col-lg-3 col-md-6 position-relative">
+                        <label class="form-label fw-bold small text-primary mb-1">To</label>
+                        <div class="position-relative">
+                            <span class="material-symbols-outlined input-icon">flight_land</span>
+                            <input type="text" class="form-control flight-input fw-bold" value="Cebu (CEB)">
+                        </div>
+                    </div>
+                    <!-- Dates -->
+                    <div class="col-lg-2 col-md-6 position-relative">
+                        <label class="form-label fw-bold small text-primary mb-1">Depart</label>
+                        <div class="position-relative">
+                            <span class="material-symbols-outlined input-icon">calendar_month</span>
+                            <input type="text" onfocus="(this.type='date')" class="form-control flight-input" placeholder="Select Date">
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-6 position-relative">
+                        <label class="form-label fw-bold small text-primary mb-1">Return</label>
+                        <div class="position-relative">
+                            <span class="material-symbols-outlined input-icon">calendar_today</span>
+                            <input type="text" onfocus="(this.type='date')" class="form-control flight-input" placeholder="Select Date">
+                        </div>
+                    </div>
+                    <!-- Button -->
+                    <div class="col-lg-2">
+                        <button onclick="window.location.href='booking-summary.html'" class="btn btn-primary search-btn shadow">
+                            <span class="material-symbols-outlined">search</span> Search
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

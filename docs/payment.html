@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment - Air-Flight Philippines</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+    
+    <style>
+        :root { --primary-color: #007BFF; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #F8F9FA; padding-top: 70px; }
+        .navbar { background: white; border-bottom: 1px solid #dee2e6; }
+        .card { border: none; border-radius: 1rem; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+        .form-control { padding: 0.75rem 1rem; border-radius: 0.5rem; }
+        .btn-primary { background-color: var(--primary-color); border: none; padding: 1rem; border-radius: 0.5rem; font-weight: 700; }
+        .map-bg { height: 160px; background: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA4aGMOgs067jRBUwiZQq59zl6C52646cTmnXDQXYtn1iBqqQYnbMZ7H8y6Pm8uWZfb4zeZkKq4A3GzG6ryjtzAHXN1MXVFZ3MXxg4LShnSmyzCBV4ua6bdR_riQtFgweF3-TqCVilfahaJdAOHDvNrZbW5VRyA4wcBT0WxXQc7hosi5q31196DDTHMNVu98Jvay2oVWRB5UJusSJZY4NfQ2z7wANK8dqcd0HysYfg1V__faIK6IwUMWq_DbVha9zuBloz3LpzeiHpU') center/cover; }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold d-flex align-items-center gap-2" href="home.html">
+                <span class="material-symbols-outlined text-primary fs-2">arrow_back</span> Secure Payment
+            </a>
+        </div>
+    </nav>
+
+    <div class="container py-5">
+        <div class="row g-5">
+            <!-- Left: Summary -->
+            <div class="col-lg-6">
+                <h4 class="fw-bold mb-3">Booking Summary</h4>
+                <div class="card overflow-hidden mb-4">
+                    <div class="map-bg"></div>
+                    <div class="card-body p-4">
+                        <h5 class="fw-bold">Manila to Cebu - Round Trip</h5>
+                        <p class="text-muted mb-4">2 Adults • Wed, 25 Sep - Tue, 1 Oct</p>
+                        <div class="d-flex justify-content-between align-items-center border-top pt-3">
+                            <span class="text-muted">Total Amount Due</span>
+                            <span class="fs-4 fw-bold text-primary">₱ 8,450.00</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex gap-3 justify-content-center opacity-50">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Visa_Logo.png" height="30" alt="Visa">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b7/MasterCard_Logo.svg" height="30" alt="Mastercard">
+                </div>
+            </div>
+
+            <!-- Right: Form -->
+            <div class="col-lg-6">
+                <div class="card p-4 p-md-5">
+                    <h4 class="fw-bold mb-4">Enter Card Details</h4>
+                    <form>
+                        <div class="mb-3">
+                            <label class="form-label fw-medium">Card Number</label>
+                            <div class="input-group">
+                                <span class="input-group-text bg-white"><span class="material-symbols-outlined text-muted">credit_card</span></span>
+                                <input type="text" class="form-control" placeholder="0000 0000 0000 0000" required>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fw-medium">Name on Card</label>
+                            <input type="text" class="form-control" placeholder="Juan Dela Cruz" required>
+                        </div>
+                        <div class="row g-3">
+                            <div class="col-6">
+                                <label class="form-label fw-medium">Expiry</label>
+                                <input type="text" class="form-control" placeholder="MM/YY" required>
+                            </div>
+                            <div class="col-6">
+                                <label class="form-label fw-medium">CVV</label>
+                                <input type="password" class="form-control" placeholder="123" maxlength="3" required>
+                            </div>
+                        </div>
+                        
+                        <button type="button" onclick="window.location.href='confirmation.html'" class="btn btn-primary w-100 mt-4 d-flex align-items-center justify-content-center gap-2 shadow">
+                            <span class="material-symbols-outlined">lock</span> Complete Booking
+                        </button>
+                        
+                        <p class="text-center small text-muted mt-3">
+                            <span class="material-symbols-outlined fs-6 align-middle">lock</span> Your transaction is encrypted and secure.
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
